@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('image/background_yoshi.png');
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'ensemble de l'écran */
+    background-repeat: no-repeat;
+    font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+ 
+button {
+    font-family: "Luckiest Guy", cursive;
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+#egg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permet aux clics sur Yoshi de passer à travers les œufs */
+}
+
+@keyframes bougerOeuf {
+    0% {
+        transform: translateY(0); /* Début de l'animation: pas de translation */
+    }
+    50% {
+        transform: translateY(-20px); /* Milieu de l'animation: translation vers le haut */
+    }
+    100% {
+        transform: translateY(0); /* Fin de l'animation: retour à la position initiale */
+    }
+}
+
+.egg {
+    position: absolute;
+    width: 40px; /* Ajustez selon la taille de votre œuf */
+    height: 40px;
+    background-image: url('image/egg.png'); /* Remplacez 'egg.png' par le chemin de votre image d'œuf */
+    background-size: contain;
+    animation: bougerOeuf 1s ease-in-out; /* Utilisation de l'animation 'bougerOeuf' sur une seconde */
+}
+
+/* Dans votre fichier CSS */
+@keyframes bougerYoshi {
+    0% {
+        transform: translateY(0); /* Début de l'animation: pas de translation */
+    }
+    50% {
+        transform: translateY(-10px); /* Milieu de l'animation: translation vers le haut */
+    }
+    100% {
+        transform: translateY(0); /* Fin de l'animation: retour à la position initiale */
+    }
+}
+
+#yoshi {
+    cursor: pointer; /* Changer le curseur au survol pour indiquer qu'il est cliquable */
+}
+
+#yoshi:active {
+    animation: bougerYoshi 0.3s ease; /* Utilisation de l'animation 'bougerYoshi' sur une durée de 0.3 seconde */
+}
+
+#yoshi {
+    cursor: pointer; /* Changer le curseur au survol pour indiquer qu'il est cliquable */
+    width: 200px; /* Définir la largeur de l'image */
+    height: auto; /* Laisser la hauteur ajustable automatiquement pour conserver les proportions */
+    margin-top: 20px; /* Marge en haut pour espacer de l'en-tête */
+    transition: transform 0.3s ease-in-out; /* Animation de transformation au survol */
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5)); /* Ajouter une ombre portée */
+}
+
+#yoshi:hover {
+    transform: scale(1.1); /* Agrandissement au survol */
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.8)); /* Augmenter l'ombre au survol */
+}
+
+#boutique {
+    background-color: #31a841; /* Couleur de fond de la boutique */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Ombre portée */
+}
+
+#boutique h2 {
+    font-size: 24px;
+    color: #FFFF00; /* Couleur de Yoshi */
+    margin-bottom: 10px;
+}
+
+#boutique img {
+    width: 40px; /* Ajustez selon la taille de vos images d'œufs */
+    height: auto;
+    margin-right: 10px;
+}
+
+#boutique button {
+    background-color: #FFD700; /* Couleur d'un œuf jaune */
+    color: #008F11; /* Couleur de Yoshi */
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Animation de changement de couleur au survol */
+}
+
+#boutique button:hover {
+    background-color: #FFFF00; /* Changement de couleur au survol */
+}
+
+#boutique p {
+    color: #FFFF00; /* Couleur de Yoshi */
+    font-size: 16px;
+    margin-top: 10px;
+}
+

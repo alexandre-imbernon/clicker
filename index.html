@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoshi's Oeufventure</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+    <audio id="yoshi-click-sound" src="audio/Boing.wav" preload="auto"></audio>
+
+    <div id="game-container">
+        <h1>Yoshi's Oeufventure</h1>
+        <p id="points">Oeufs: 0</p>
+        <img id="yoshi" src="image/yoshi_asset_solo.png" alt="Yoshi">
+        <div id="egg-container"></div>
+
+        <div id="boutique">
+            <h2>Boutique : </h2>
+            <p>Oeuf jaune de Yoshi</p>
+            <img src="image/egg_yellow.png">
+            <button id="buy-manual-click">Acheter un clic manuel +1 oeuf à chaque achat (25 points)</button>
+            <p>Oeuf rose de Yoshi</p>
+            <img src="image/pink_egg.png">
+            <button id="buy-auto-click">Acheter un clic automatique +1 oeuf à chaque achat chaque seconde (50 points)</button>
+            <p>Oeuf multicolore de Yoshi</p>
+            <img src="image/big_egg.png">
+            <button id="buy-auto-click-10-sec">Ajoute 10 points par secondes pendant 15 secondes (100 points)</button>
+            <p id="auto-click-value">Valeur de clic automatique: +0 oeuf(s)</p>
+            <p id="manual-click-counter">Valeur de clic manuel: +0 oeuf(s)</p>
+        </div>
+    </div>
+
+
+    <audio autoplay loop>
+        <source src="audio/dk_song.mp3" type="audio/mpeg">
+        </audio>
+
+    <script src="script.js"></script>
+ <footer>
+
+ </footer>
+</body>
+</html>

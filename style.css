@@ -9,10 +9,15 @@ body {
   p {
     color: white;
   }
-
+  
   #shotgun-img {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 7px; /* Placez l'image shotgun à l'extrême droite */
 }
-  
+
+#machinegun-img {
+    position: absolute;
+    top: 0;
+    right: 122px; /* Définissez la position de l'image machinegun pour qu'elle soit décalée de 40px vers la gauche par rapport à l'image shotgun */
+}

@@ -41,6 +41,7 @@ setInterval(function() {
     document.getElementById("score").innerHTML = score;
 }, 1000); // 1000ms / 1sec
 
+
 // Sélectionnez l'élément d'image shotgun
 var shotgunImg = document.getElementById("shotgun-img");
 

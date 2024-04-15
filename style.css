@@ -1,0 +1,18 @@
+body {
+    cursor: url('../clicker/assets/curseur.png');
+}
+body {
+    background-image: url("../clicker/assets/background.jpg");
+    ;
+  }
+
+  p {
+    color: white;
+  }
+
+  #shotgun-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+  

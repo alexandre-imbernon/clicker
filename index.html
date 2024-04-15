@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker</title>
+    <!-- Déplacez la balise audio dans la section head -->
+    <audio src="assets/bgsong.mp3" preload="auto" autoplay></audio>
+</head>
+<body>
+    <button onclick="buyCursor()">Cursor [<span id="cursorcost">15</span>] -- <span id="cursors">0</span></button>
+    <button onclick="buyGrandma()">Grandma [<span id="grandmacost">100</span>] -- <span id="grandmas">0</span></button>
+
+    <p>Score: <span id="score">0</span></p>
+    <audio id="click-sound" src="../clicker/assets/pistoleffect.mp3" preload="auto"></audio>
+    <audio id="shop-sound" src="../clicker/assets/bought.mp3" preload="auto"></audio>
+    <img src="../clicker/assets/monster2.png" onclick="addToScore(1)">
+    <img src="../clicker/assets/monstre1.png" onclick="addToScore(1)">
+    <img src="../clicker/assets/shotgun.png" id="shotgun-img">
+    <script src="main.js"></script>
+</body>
+</html>
+

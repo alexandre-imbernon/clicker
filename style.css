@@ -1,6 +1,7 @@
 body {
-    cursor: url('../clicker/assets/curseur.png');
+  cursor: url('../clicker/assets/copiecrosshair.png'), auto;
 }
+
 body {
     background-image: url("../clicker/assets/background.jpg");
     ;
@@ -20,4 +21,34 @@ body {
     position: absolute;
     top: 0;
     right: 122px; /* Définissez la position de l'image machinegun pour qu'elle soit décalée de 40px vers la gauche par rapport à l'image shotgun */
+}
+
+/* Style de l'info-bulle */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style du texte de l'info-bulle */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 50%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Afficher le texte de l'info-bulle lors du survol */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }

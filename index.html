@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resident Clicker</title>
     <!-- Déplacez la balise audio dans la section head -->
-    <audio src="assets/bgsong.mp3" preload="auto" autoplay></audio>
-</head>
+   
+    </head>
 <body>
+    <audio onclick  preload="auto">
+        <source src="../clicker/assets/bgsong.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'élément audio.
+    </audio>
     <button onclick="buyCursor()">Cursor [<span id="cursorcost">15</span>] -- <span id="cursors">0</span></button>
     <button onclick="buyGrandma()">Grandma [<span id="grandmacost">100</span>] -- <span id="grandmas">0</span></button>
 

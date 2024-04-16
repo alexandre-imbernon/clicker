@@ -3,24 +3,62 @@ body {
 }
 
 body {
-    background-image: url("../clicker/assets/background.jpg");
-    ;
-  }
-
-  p {
-    color: white;
-  }
-  
-  #shotgun-img {
-    position: absolute;
-    top: 0;
-    right: 7px; /* Placez l'image shotgun à l'extrême droite */
+  background-image: url("../clicker/assets/background.jpg");
 }
 
-#machinegun-img {
-    position: absolute;
-    top: 0;
-    right: 122px; /* Définissez la position de l'image machinegun pour qu'elle soit décalée de 40px vers la gauche par rapport à l'image shotgun */
+p {
+  color: white;
+}
+#menu2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start; /* Aligner les éléments en haut */
+  justify-content: end;
+  width: 50%;
+}
+#menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start; /* Aligner les éléments en haut */
+  justify-content: end;
+  width: 25%;
+  height: 25%;
+}
+
+#menu img {
+  width: 35%; /* Pour que chaque image occupe 35% de la largeur du conteneur */
+  margin-bottom: 10px;
+  margin: 3px;
+}
+
+#monsters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 400px; /* Ajoutez cette ligne pour déplacer les éléments vers la gauche */
+  margin-top: 50px;
+}
+
+
+#gamename {
+  position: absolute;
+  font-family: Compacta;
+  color: red;
+  font-size: 60px;
+  text-align: end;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  right: 0; /* Positionner le texte tout à droite de la page */
+}
+
+#scoreshow {
+  position: absolute;
 }
 
 /* Style de l'info-bulle */

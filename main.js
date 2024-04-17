@@ -108,4 +108,3 @@ shotgunImg.addEventListener("click", function() {
     shopSound.currentTime = 0; // Rembobinez le son au début pour le réinitialiser
     shopSound.play();
 });
-

@@ -8,6 +8,7 @@ body {
 
 p {
   color: white;
+  
 }
 #menu2 {
   position: absolute;
@@ -99,16 +100,17 @@ p {
 
 #shotgun-cost-tooltip {
   position: absolute;
-  top: -30px; /* Ajustez la position verticale selon vos besoins */
-  left: 50%;
+  top: -40px; /* Ajustez la position verticale pour placer l'info-bulle au-dessus de l'image */
+  left: 20%;
   transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: red;
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+  
 }
 
 #shotgun-container:hover #shotgun-cost-tooltip {

@@ -3,6 +3,7 @@ var cursorCost = 15;
 var cursors = 0;
 var grandmaCost = 100;
 var grandmas = 0;
+
 function buyCursor() {
     if (score >= cursorCost) {
         score -= cursorCost;
@@ -33,6 +34,9 @@ function buyGrandma () {
 
     }
 }
+
+var machinegunImg = document.getElementById("machinegun-img");
+machinegunImg.addEventListener("click", buyGrandma);
 
 function addToScore(amount) {
     score = score + amount;

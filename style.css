@@ -23,7 +23,7 @@ p {
 #menu {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -75px;
   margin-top: 200px;
   display: flex;
   flex-wrap: wrap;
@@ -47,6 +47,13 @@ p {
   margin-top: 50px;
 }
 
+#monsters img:hover {
+  transform: scale(1.10);
+  color: green; /* Change la couleur du curseur en vert */
+}
+
+
+
 
 #gamename {
   position: absolute;
@@ -55,11 +62,20 @@ p {
   font-size: 60px;
   text-align: end;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  right: 0; /* Positionner le texte tout à droite de la page */
+  right: 7px;
+  bottom: 480px; /* Réglez la distance désirée par rapport au haut de la page */
 }
+
 
 #scoreshow {
   position: absolute;
+  font-family: Compacta;
+  color: red;
+  font-size: 40px;
+  text-align: end;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  right: 15px;
+  
 }
 
 /* Style de l'info-bulle */

@@ -20,8 +20,6 @@ function buyCursor() {
     }
 }
 
-
-
 function buyGrandma () {
     if (score >= grandmaCost){
         score = score - grandmaCost;

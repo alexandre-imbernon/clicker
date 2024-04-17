@@ -6,6 +6,8 @@ let coutManualClick = 25; // Prix initial pour acheter un clic manuel
 let coutAutoClick = 50; // Prix initial pour acheter un clic automatique
 let manualClickCounter = 0; // Variable pour stocker le nombre de clics manuels
 
+
+
 // Fonction pour mettre à jour l'affichage des points
 function afficherPoints() {
     document.getElementById("points").innerHTML = "Points: " + points;
@@ -63,6 +65,9 @@ function acheterElement(element) {
     afficherAutoClickValue(); // Met à jour l'affichage de la valeur de clic automatique
     afficherManualClickCounter(); // Met à jour l'affichage du compteur de clics manuels
     afficherPrixElements(); // Met à jour l'affichage des prix
+    
+    // Empêcher le comportement par défaut du bouton
+    event.preventDefault();
 }
 
 // Fonction pour afficher les prix des éléments de la boutique
@@ -137,6 +142,7 @@ function acheterBonusAutoClick() {
         // Arrête d'ajouter des points après la durée du bonus
         setTimeout(function() {
             clearInterval(interval); // Arrête l'interval
+            afficherImagesBonus(); // Affiche à nouveau les images bonus après la fin du bonus
         }, dureeBonus * 1000); // Convertit la durée en millisecondes
 
         afficherPoints(); // Met à jour l'affichage des points
@@ -144,4 +150,118 @@ function acheterBonusAutoClick() {
         alert("Vous n'avez pas assez de points pour acheter ce bonus !");
     }
 }
+
 document.getElementById("buy-auto-click-10-sec").addEventListener("click", acheterBonusAutoClick);
+
+// Fonction pour afficher les images bonus
+function afficherImagesBonus() {
+    const bonus1 = document.getElementById("bonus1");
+    const bonus2 = document.getElementById("bonus2");
+
+    // Afficher les images bonus
+    bonus1.style.display = "block";
+    bonus2.style.display = "block";
+
+    // Définir une nouvelle position aléatoire pour chaque image bonus
+    positionAleatoire(bonus1);
+    positionAleatoire(bonus2);
+}
+
+// Fonction pour acheter un bonus de clic automatique
+function acheterBonusAutoClick() {
+    const coutBonus = 100;
+    const dureeBonus = 15; // Durée du bonus en secondes
+    const pointsParSeconde = 10;
+
+    if (points >= coutBonus) {
+        points -= coutBonus; // Dépense des points pour acheter le bonus
+
+        // Ajoute des points chaque seconde pendant la durée du bonus
+        const interval = setInterval(function() {
+            points += pointsParSeconde;
+            afficherPoints(); // Met à jour l'affichage des points
+        }, 1000);
+
+        // Arrête d'ajouter des points après la durée du bonus
+        setTimeout(function() {
+            clearInterval(interval); // Arrête l'interval
+            afficherImagesBonus(); // Affiche à nouveau les images bonus après la fin du bonus
+        }, dureeBonus * 1000); // Convertit la durée en millisecondes
+
+        afficherPoints(); // Met à jour l'affichage des points
+    } else {
+        alert("Vous n'avez pas assez de points pour acheter ce bonus !");
+    }
+}
+
+document.getElementById("buy-auto-click-10-sec").addEventListener("click", acheterBonusAutoClick);
+
+// Fonction pour afficher les images bonus
+function afficherImagesBonus() {
+    const bonus1 = document.getElementById("bonus1");
+    const bonus2 = document.getElementById("bonus2");
+
+    // Afficher les images bonus
+    bonus1.style.display = "block";
+    bonus2.style.display = "block";
+
+    // Définir une nouvelle position aléatoire pour chaque image bonus
+    positionAleatoire(bonus1);
+    positionAleatoire(bonus2);
+}
+
+// Fonction pour faire disparaître et réapparaître une image bonus
+function toggleBonusVisibility(bonusId, pointsGagnes) {
+    // Rend invisible l'image bonus en ajoutant une classe CSS
+    document.getElementById(bonusId).classList.add('invisible');
+
+    // Programme l'apparition de l'image bonus après 20 secondes
+    setTimeout(function() {
+        // Rend l'image bonus visible en supprimant la classe CSS
+        document.getElementById(bonusId).classList.remove('invisible');
+    }, 20000); // 20 secondes (en millisecondes)
+
+    // Ajoute les points gagnés et affiche le message correspondant
+    points += pointsGagnes;
+    afficherPoints();
+    afficherMessage("Vous avez gagné " + pointsGagnes + " oeufs !");
+}
+
+// Ajoute des écouteurs d'événements aux images bonus pour appeler la fonction toggleBonusVisibility() lorsqu'elles sont cliquées
+document.getElementById('bonus1').addEventListener('click', function() {
+    toggleBonusVisibility('bonus1', 20); // Appelle la fonction pour faire disparaître et réapparaître l'image bonus 1 et ajouter 20 points
+});
+
+document.getElementById('bonus2').addEventListener('click', function() {
+    toggleBonusVisibility('bonus2', 50); // Appelle la fonction pour faire disparaître et réapparaître l'image bonus 2 et ajouter 50 points
+});
+
+
+// Fonction pour afficher un message
+function afficherMessage(message) {
+    const messageElement = document.getElementById('message');
+    messageElement.innerText = message;
+    // Affiche le message pendant 3 secondes
+    setTimeout(function() {
+        messageElement.innerText = '';
+    }, 3000);
+}
+
+// Fonction pour faire disparaître et réapparaître une image bonus
+function toggleBonusVisibility(bonusId, pointsGagnes) {
+    // Rend invisible l'image bonus en ajoutant une classe CSS
+    document.getElementById(bonusId).classList.add('invisible');
+
+    // Programme l'apparition de l'image bonus après 20 secondes
+    setTimeout(function() {
+        // Rend l'image bonus visible en supprimant la classe CSS
+        document.getElementById(bonusId).classList.remove('invisible');
+    }, 20000); // 20 secondes (en millisecondes)
+
+    // Ajoute les points gagnés et affiche le message correspondant
+    points += pointsGagnes;
+    afficherPoints();
+    afficherMessage("Vous avez gagné " + pointsGagnes + " oeufs !");
+}
+
+

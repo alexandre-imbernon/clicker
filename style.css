@@ -7,6 +7,8 @@ body {
     font-family: "Luckiest Guy", cursive;
   font-weight: 400;
   font-style: normal;
+  cursor: url('image/kirby-removebg-preview.png'), auto;
+  color: #FFD700;
 }
  
 button {
@@ -59,9 +61,7 @@ button {
     }
 }
 
-#yoshi {
-    cursor: pointer; /* Changer le curseur au survol pour indiquer qu'il est cliquable */
-}
+
 
 #yoshi:active {
     animation: bougerYoshi 0.3s ease; /* Utilisation de l'animation 'bougerYoshi' sur une durée de 0.3 seconde */
@@ -81,13 +81,6 @@ button {
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.8)); /* Augmenter l'ombre au survol */
 }
 
-#boutique {
-    background-color: #31a841; /* Couleur de fond de la boutique */
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 30px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Ombre portée */
-}
 
 #boutique h2 {
     font-size: 24px;
@@ -122,4 +115,50 @@ button {
     font-size: 16px;
     margin-top: 10px;
 }
+
+
+#boutique {
+    position: absolute;
+    top: 0; /* Ajustez selon votre mise en page */
+    right: 0; /* Place la boutique sur le côté droit */
+    width: 300px; /* Définissez la largeur de la boutique */
+    padding: 20px; /* Ajoutez un remplissage pour l'apparence */
+    background-color: #008F11; /* Couleur de fond de la boutique */
+    border-left: 2px solid #ccc; /* Ajoute une bordure à gauche pour la séparation */
+}
+
+#bonus1:active {
+    animation: bougerYoshi 0.3s ease; /* Utilisation de l'animation 'bougerYoshi' sur une durée de 0.3 seconde */
+}
+
+#bonus1 {
+    cursor: pointer; /* Changer le curseur au survol pour indiquer qu'il est cliquable */
+    width: 200px; /* Définir la largeur de l'image */
+    height: auto; /* Laisser la hauteur ajustable automatiquement pour conserver les proportions */
+    margin-top: 20px; /* Marge en haut pour espacer de l'en-tête */
+    transition: transform 0.3s ease-in-out; /* Animation de transformation au survol */
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5)); /* Ajouter une ombre portée */
+}
+
+#bonus2:active {
+    animation: bougerYoshi 0.3s ease; /* Utilisation de l'animation 'bougerYoshi' sur une durée de 0.3 seconde */
+}
+
+#bonus2 {
+    
+    cursor: pointer; /* Changer le curseur au survol pour indiquer qu'il est cliquable */
+    width: 200px; /* Définir la largeur de l'image */
+    height: auto; /* Laisser la hauteur ajustable automatiquement pour conserver les proportions */
+    margin-top: 20px; /* Marge en haut pour espacer de l'en-tête */
+    transition: transform 0.3s ease-in-out; /* Animation de transformation au survol */
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5)); /* Ajouter une ombre portée */
+}
+
+
+.invisible {
+    display: none;
+}
+
+
+
 

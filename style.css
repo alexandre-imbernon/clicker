@@ -159,6 +159,25 @@ button {
     display: none;
 }
 
+.monstre {
+    position: fixed;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.yeux {
+    position: fixed;
+    top: 42%;
+    left: 74%;
+    transform: translate(-50%, -50%);
+}
 
 
-
+.bouche img {
+    position: fixed;
+    top: 10%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: 8%;
+}

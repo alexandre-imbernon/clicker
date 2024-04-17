@@ -264,4 +264,20 @@ function toggleBonusVisibility(bonusId, pointsGagnes) {
     afficherMessage("Vous avez gagné " + pointsGagnes + " oeufs !");
 }
 
+// Fonction pour acheter un bonus de clic automatique permanent de 20 points par seconde
+function acheterBonusAutoClick20Permanent() {
+    const coutBonus = 700;
+
+    if (points >= coutBonus) {
+        points -= coutBonus; // Dépense des points pour acheter le bonus
+        autoClickValue += 20; // Augmente la valeur de clic automatique de 20 points par seconde
+        afficherAutoClickValue(); // Met à jour l'affichage de la valeur de clic automatique
+        afficherPoints(); // Met à jour l'affichage des points
+    } else {
+        alert("Vous n'avez pas assez de points pour acheter ce bonus !");
+    }
+}
+
+// Associer la fonction à l'événement clic sur le bouton correspondant
+document.getElementById("buy-auto-click-20-sec").addEventListener("click", acheterBonusAutoClick20Permanent);
 

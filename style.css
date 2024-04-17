@@ -2,13 +2,14 @@ body {
     margin: 0;
     padding: 0;
     background-image: url('image/background_yoshi.png');
+    position: fixed;
     background-size: cover; /* Ajuste la taille de l'image pour remplir l'ensemble de l'écran */
     background-repeat: no-repeat;
     font-family: "Luckiest Guy", cursive;
   font-weight: 400;
   font-style: normal;
-  cursor: url('image/kirby-removebg-preview.png'), auto;
   color: #FFD700;
+  cursor: url('image/kirby-removebg-preview.png'), auto;
 }
  
 button {
@@ -102,7 +103,7 @@ button {
     margin: 10px 0;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: url('image/kirby-removebg-preview.png'), auto;
     transition: background-color 0.3s ease; /* Animation de changement de couleur au survol */
 }
 
@@ -116,16 +117,24 @@ button {
     margin-top: 10px;
 }
 
+body,p {
+    font-size: large;
+}
+
 
 #boutique {
-    position: absolute;
-    top: 0; /* Ajustez selon votre mise en page */
-    right: 0; /* Place la boutique sur le côté droit */
-    width: 300px; /* Définissez la largeur de la boutique */
-    padding: 20px; /* Ajoutez un remplissage pour l'apparence */
-    background-color: #008F11; /* Couleur de fond de la boutique */
-    border-left: 2px solid #ccc; /* Ajoute une bordure à gauche pour la séparation */
+    cursor: url('image/kirby-removebg-preview.png'), auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    padding: 20px;
+    background-color: #008F11;
+    border-left: 2px solid #ccc;
+    overflow-y: auto; /* Ajoute une barre de défilement verticale si nécessaire */
+    max-height: 80vh; /* Limite la hauteur pour éviter que la boutique ne dépasse l'écran */
 }
+
 
 #bonus1:active {
     animation: bougerYoshi 0.3s ease; /* Utilisation de l'animation 'bougerYoshi' sur une durée de 0.3 seconde */
@@ -181,3 +190,6 @@ button {
     transform: translate(-50%, -50%);
     width: 8%;
 }
+
+
+

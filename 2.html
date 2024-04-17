@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miaou Clicker</title>
+    <link rel="stylesheet" href="style.css"> <!-- Lien vers votre fichier CSS -->
+</head>
+<body class="custom-cursor">
+    <div class="container">
+        <h1>MiaouUUUU</h1>
+        <div class="cat-container">
+            <!-- Image de la tête du chat à cliquer -->
+        </div>
+        <div class="stats">
+            <p>Score Miaou : <span id="score">0</span></p>
+            <img src="images/Capture_d_écran_2024-04-16_093757-removebg-preview.png" alt="Tête de chat" onclick="addToScore(1)">
+
+        </div>
+        <div class="shop">
+            <h2>Boutique</h2>
+            <button onclick="buyCursor()">Cursor [<span id="cursorcost">15</span>] -- <span id="cursors"> 0</span></button>
+            <button onclick="buyGrandma()">Acheter manuellement [<span id="grandmacost">100</span></button>//8888888888888888888888888
+            <button id="incrementButton" onclick="manualIncrement()">Acheter un accessoire (40 points)</button>
+        </div>
+
+        <audio id="clickSound" src="/chat.mp3"></audio>
+
+    </div>
+    <script src="2.js"></script> <!-- Lien vers votre fichier JavaScript -->
+</body>
+</html>

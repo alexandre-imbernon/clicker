@@ -30,6 +30,10 @@ p {
   margin: 3px;
 }
 
+#menu img:hover {
+  transform: scale(1.05);
+}
+
 #menu2 {
   position: absolute;
   top: 0;
@@ -100,4 +104,17 @@ p {
 
 .item-container:hover .tooltip {
   opacity: 1;
+}
+
+@keyframes fade-out {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+.blood-effect {
+  animation-name: fade-out;
+  animation-duration: 4s;
+  pointer-events: none;
+  height: 40%;
+  width: auto;
 }

@@ -1,8 +1,13 @@
 var score = 0;
 var shotgunCost = 15;
 var shotguns = 0;
-var machinegunCost = 100;
+var machinegunCost = 50;
 var machineguns = 0;
+var bloodImages = [
+    '../clicker/assets/bloodsplatter/blood1.png',
+    '../clicker/assets/bloodsplatter/blood2.png',
+    '../clicker/assets/bloodsplatter/blood3.png',
+  ];
 
 // Récupérer l'élément image du shotgun
 var shotgunImg = document.getElementById("shotgun-img");
@@ -111,9 +116,13 @@ shotgunImg.addEventListener("click", function() {
 function showBloodEffect(event) {
     // Créez un nouvel élément d'image
     var bloodImage = document.createElement('img');
-
+    bloodImage.className = 'blood-effect';
+    
+    var randomIndex = Math.floor(Math.random() * bloodImages.length);
+    var randomImage = bloodImages[randomIndex];
+    
     // Définissez l'URL de l'image de l'effet de sang
-    bloodImage.src = '../clicker/assets/bloodsplatter/blood1.png'; // Remplacez par l'URL de votre image
+    bloodImage.src = randomImage;
     
     // Positionnez l'image de l'effet de sang là où vous avez cliqué
     bloodImage.style.position = 'absolute';
@@ -126,6 +135,9 @@ function showBloodEffect(event) {
     // Supprimez l'image de l'effet de sang après un certain temps
     setTimeout(function() {
       document.body.removeChild(bloodImage);
-    }, 1000); // Supprime l'image après 1 seconde
+    }, 4000); 
   }
+
+
+  
   

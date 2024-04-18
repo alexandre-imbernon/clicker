@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resident Clicker</title>
     <audio id="background-audio" preload="auto">
-        <source src="../clicker/assets/bgsong.mp3" type="audio/mpeg">
+        <source src="../clicker/assets/soundeffect/bgsong.mp3" autoplay type="audio/mpeg">
         Votre navigateur ne supporte pas l'élément audio.
     </audio>
 </head>
 <body>
     <p id="gamename">Resident Clicker</p>
     <p id="scoreshow">Dégâts: <span id="score">0</span></p>
-    <audio id="click-sound" src="../clicker/assets/pistoleffect.mp3" preload="auto"></audio>
-    <audio id="shop-sound" src="../clicker/assets/bought.mp3" preload="auto"></audio>
+    <audio id="click-sound" src="../clicker/assets/soundeffect/pistoleffect.mp3" preload="auto"></audio>
+    <audio id="shop-sound" src="../clicker/assets/soundeffect/bought.mp3" preload="auto"></audio>
 <div id="monsters">
     <img src="../clicker/assets/monster2.png" onclick="addToScore(1)">
     <img src="../clicker/assets/monstre1.png" onclick="addToScore(1)">
@@ -31,7 +31,7 @@
         </div>
         <div class="item-container">
             <span class="tooltip">R. Launcher (): Chaque tir provoque 30 dégâts mais nécessite un cooldown</span>
-            <img src="../clicker/assets/menu/rocketlauncher.png" id="rocketlauncher-img" >
+            <img src="../clicker/assets/menu/rocketlauncher.png" id="rocketlauncher-img">
         </div>
         <div class="item-container">
             <span class="tooltip">Gatling Gun (): Tir enfoncé permet de provoquer 5 dégâts par input</span>

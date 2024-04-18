@@ -45,7 +45,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 400px; /* Ajoutez cette ligne pour déplacer les éléments vers la gauche */
+  margin-right: 400px; 
   margin-top: 50px;
 }
 
@@ -61,7 +61,7 @@ p {
   text-align: end;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   right: 7px;
-  bottom: 480px; /* Réglez la distance désirée par rapport au haut de la page */
+  bottom: 480px; 
 }
 
 
@@ -88,6 +88,9 @@ p {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+  width: 200px; /* Ajustez la largeur comme vous le souhaitez */
+  height: auto;
+  z-index: 10;
 }
 
 .item-container {

@@ -4,22 +4,6 @@ var cursors = 0;
 var grandmaCost = 100;
 var grandmas = 0;
 
-function buyCursor() {
-    if (score >= cursorCost) {
-        score -= cursorCost;
-        cursors++;
-        cursorCost = Math.round(cursorCost * 1.15);
-
-        // Mettre à jour le contenu de l'info-bulle
-        document.getElementById("cursor-cost-tooltip").innerHTML = cursorCost;
-
-        // Mettre à jour l'affichage
-        document.getElementById("score").innerHTML = score;
-        document.getElementById("cursorcost").innerHTML = cursorCost;
-        document.getElementById("cursors").innerHTML = cursors;
-    }
-}
-
 function buyGrandma () {
     if (score >= grandmaCost){
         score = score - grandmaCost;
@@ -94,6 +78,25 @@ function addToScore(amount) {
     }
 }
 
+function buyCursor() {
+    if (score >= cursorCost) {
+        score -= cursorCost;
+        cursors++;
+        addToScore(3);
+
+        cursorCost = Math.round(cursorCost * 1.15);
+
+        // Mettre à jour le contenu de l'info-bulle
+        document.getElementById("cursor-cost-tooltip").innerHTML = cursorCost;
+
+        // Mettre à jour l'affichage
+        document.getElementById("score").innerHTML = score;
+        document.getElementById("cursorcost").innerHTML = cursorCost;
+        document.getElementById("cursors").innerHTML = cursors;
+    }
+}
+
+
 // Sélectionnez l'élément audio pour le son du shop
 var shopSound = document.getElementById("shop-sound");
 
@@ -106,3 +109,4 @@ shotgunImg.addEventListener("click", function() {
     shopSound.currentTime = 0; // Rembobinez le son au début pour le réinitialiser
     shopSound.play();
 });
+

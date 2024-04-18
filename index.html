@@ -12,8 +12,6 @@
 </head>
 <body>
     <p id="gamename">Resident Clicker</p>
-    <button onclick="buyCursor()">Cursor [<span id="cursorcost">15</span>] -- <span id="cursors">0</span></button>
-    <button onclick="buyGrandma()">Grandma [<span id="grandmacost">100</span>] -- <span id="grandmas">0</span></button>
     <p id="scoreshow">Dégâts: <span id="score">0</span></p>
     <audio id="click-sound" src="../clicker/assets/pistoleffect.mp3" preload="auto"></audio>
     <audio id="shop-sound" src="../clicker/assets/bought.mp3" preload="auto"></audio>
@@ -24,11 +22,22 @@
 <div id="menu">
     <div id="shotgun-container">
         <span id="shotgun-cost-tooltip">Remington M1100-P (15): Chaque tir provoque 3 dégâts</span>
-        <img src="../clicker/assets/shotgun.png" id="shotgun-img">
-        <img src="../clicker/assets/machinegun.png" id="machinegun-img">
+        <img onclick="buyCursor()" src="../clicker/assets/shotgun.png" id="shotgun-img">
+        <img onclick="buyGrandma()" src="../clicker/assets/machinegun.png" id="machinegun-img">
         <img src="../clicker/assets/rocketlauncher.png" id="rocketlauncher-img" >
         <img src="../clicker/assets/gatling.png" id="gatling-img">
-    
+        <img src="../clicker/assets/lighter.png" id="lighter-img">
+        <img src="../clicker/assets/ruby.png" id="ruby-img">
+
     <script src="main.js"></script>
 </body>
 </html>
+
+
+
+<!-- Gatling Gun (): Tir enfoncé permet de provoquer 5 dégâts par input
+    R. Launcher (): Chaque tir provoque 30 dégâts mais nécessite un cooldown 
+    MAC11 Submachine Gun (): Tir enfoncé permet de provoquer 1 dégât par input
+    Lighter (): Provoque 1 dégât par seconde pendant 30 secondes
+    Ruby (): Double les dégâts pendant 15 secondes
+-->

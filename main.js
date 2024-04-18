@@ -108,3 +108,24 @@ shotgunImg.addEventListener("click", function() {
     shopSound.play();
 });
 
+function showBloodEffect(event) {
+    // Créez un nouvel élément d'image
+    var bloodImage = document.createElement('img');
+
+    // Définissez l'URL de l'image de l'effet de sang
+    bloodImage.src = '../clicker/assets/bloodsplatter/blood1.png'; // Remplacez par l'URL de votre image
+    
+    // Positionnez l'image de l'effet de sang là où vous avez cliqué
+    bloodImage.style.position = 'absolute';
+    bloodImage.style.left = event.clientX + 'px';
+    bloodImage.style.top = event.clientY + 'px';
+    
+    // Ajoutez l'image de l'effet de sang à la page
+    document.body.appendChild(bloodImage);
+    
+    // Supprimez l'image de l'effet de sang après un certain temps
+    setTimeout(function() {
+      document.body.removeChild(bloodImage);
+    }, 1000); // Supprime l'image après 1 seconde
+  }
+  

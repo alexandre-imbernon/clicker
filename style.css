@@ -11,6 +11,9 @@ body {
   color: #FFD700;
   cursor: url('image/kirby-removebg-preview.png'), auto;
 }
+ html {
+    cursor: url('image/kirby-removebg-preview.png'), auto;
+ }
  
 button {
     font-family: "Luckiest Guy", cursive;

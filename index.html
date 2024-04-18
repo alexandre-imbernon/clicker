@@ -20,24 +20,32 @@
     <img src="../clicker/assets/monstre1.png" onclick="addToScore(1)">
 </div>
 <div id="menu">
-    <div id="shotgun-container">
-        <span id="shotgun-cost-tooltip">Remington M1100-P (15): Chaque tir provoque 3 dégâts</span>
-        <img onclick="buyCursor()" src="../clicker/assets/shotgun.png" id="shotgun-img">
-        <img onclick="buyGrandma()" src="../clicker/assets/machinegun.png" id="machinegun-img">
-        <img src="../clicker/assets/rocketlauncher.png" id="rocketlauncher-img" >
-        <img src="../clicker/assets/gatling.png" id="gatling-img">
-        <img src="../clicker/assets/lighter.png" id="lighter-img">
-        <img src="../clicker/assets/ruby.png" id="ruby-img">
-
+    <div id="hover-container">
+        <div class="item-container">
+            <span class="tooltip">Remington M1100-P (15): Chaque tir provoque 3 dégâts</span>
+            <img onclick="buyshotgun()" src="../clicker/assets/menu/shotgun.png" id="shotgun-img">
+        </div>
+        <div class="item-container">
+            <span class="tooltip">MAC11 Submachine Gun (): Tir enfoncé permet de provoquer 1 dégât par input</span>
+            <img onclick="buymachinegun()" src="../clicker/assets/menu/machinegun.png" id="machinegun-img">
+        </div>
+        <div class="item-container">
+            <span class="tooltip">R. Launcher (): Chaque tir provoque 30 dégâts mais nécessite un cooldown</span>
+            <img src="../clicker/assets/menu/rocketlauncher.png" id="rocketlauncher-img" >
+        </div>
+        <div class="item-container">
+            <span class="tooltip">Gatling Gun (): Tir enfoncé permet de provoquer 5 dégâts par input</span>
+            <img src="../clicker/assets/menu/gatling.png" id="gatling-img">
+        </div>
+        <div class="item-container">
+            <span class="tooltip">Lighter (): Provoque 1 dégât par seconde pendant 30 secondes</span>
+            <img src="../clicker/assets/menu/lighter.png" id="lighter-img">
+        </div>
+        <div class="item-container">
+            <span class="tooltip">Ruby (): Double les dégâts pendant 15 secondes</span>
+            <img src="../clicker/assets/menu/ruby.png" id="ruby-img">
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
-
-
-
-<!-- Gatling Gun (): Tir enfoncé permet de provoquer 5 dégâts par input
-    R. Launcher (): Chaque tir provoque 30 dégâts mais nécessite un cooldown 
-    MAC11 Submachine Gun (): Tir enfoncé permet de provoquer 1 dégât par input
-    Lighter (): Provoque 1 dégât par seconde pendant 30 secondes
-    Ruby (): Double les dégâts pendant 15 secondes
--->

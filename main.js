@@ -1,24 +1,27 @@
 var score = 0;
-var cursorCost = 15;
-var cursors = 0;
-var grandmaCost = 100;
-var grandmas = 0;
+var shotgunCost = 15;
+var shotguns = 0;
+var machinegunCost = 100;
+var machineguns = 0;
 
-function buyGrandma () {
-    if (score >= grandmaCost){
-        score = score - grandmaCost;
-        grandmas = grandmas + 1;
-        cursorCost = Math.round(grandmaCost * 1.15);
+// Récupérer l'élément image du shotgun
+var shotgunImg = document.getElementById("shotgun-img");
+
+function buymachinegun () {
+    if (score >= machinegunCost){
+        score = score - machinegunCost;
+        machineguns = machineguns + 1;
+        shotgunCost = Math.round(machinegunCost * 1.15);
 
         document.getElementById("score").innerHTML = score;
-        document.getElementById("grandmacost").innerHTML = cursorCost;
-        document.getElementById("grandmas").innerHTML = grandmas;
+        document.getElementById("machineguncost").innerHTML = shotgunCost;
+        document.getElementById("machineguns").innerHTML = machineguns;
 
     }
 }
 
 var machinegunImg = document.getElementById("machinegun-img");
-machinegunImg.addEventListener("click", buyGrandma);
+machinegunImg.addEventListener("click", buymachinegun);
 
 function addToScore(amount) {
     score = score + amount;
@@ -26,17 +29,13 @@ function addToScore(amount) {
 }
 
 setInterval(function() {
-    score = Math.round(score + cursors * 0.5);
-    score = score + grandmas * 5;
+    score = Math.round(score + shotguns * 0.5);
+    score = score + machineguns * 5;
     document.getElementById("score").innerHTML = score;
 }, 1000); // 1000ms / 1sec
 
-
-// Sélectionnez l'élément d'image shotgun
-var shotgunImg = document.getElementById("shotgun-img");
-
 // Ajoutez un gestionnaire d'événements pour le clic sur l'image shotgun
-shotgunImg.addEventListener("click", buyCursor);
+shotgunImg.addEventListener("click", buyshotgun);
 
 // Sélectionnez l'élément audio et préchargez-le
 var clickSound = document.getElementById("click-sound");
@@ -78,30 +77,29 @@ function addToScore(amount) {
     }
 }
 
-function buyCursor() {
-    if (score >= cursorCost) {
-        score -= cursorCost;
-        cursors++;
+function buyshotgun() {
+    if (score >= shotgunCost) {
+        score -= shotgunCost;
+        shotguns++;
         addToScore(3);
 
-        cursorCost = Math.round(cursorCost * 1.15);
+        shotgunCost = Math.round(shotgunCost * 1.15);
 
         // Mettre à jour le contenu de l'info-bulle
-        document.getElementById("cursor-cost-tooltip").innerHTML = cursorCost;
+        document.getElementById("shotgun-cost-tooltip").innerHTML = shotgunCost;
 
         // Mettre à jour l'affichage
         document.getElementById("score").innerHTML = score;
-        document.getElementById("cursorcost").innerHTML = cursorCost;
-        document.getElementById("cursors").innerHTML = cursors;
+        document.getElementById("shotguncost").innerHTML = shotgunCost;
+        document.getElementById("shotguns").innerHTML = shotguns;
     }
 }
 
+// Assigner la description avec le coût actuel du shotgun à l'attribut title
+shotgunImg.title = "Remington M1100-P (" + shotgunCost + "): Chaque tir provoque 3 dégâts";
 
 // Sélectionnez l'élément audio pour le son du shop
 var shopSound = document.getElementById("shop-sound");
-
-// Sélectionnez l'image du shotgun
-var shotgunImg = document.getElementById("shotgun-img");
 
 // Ajoutez un gestionnaire d'événements pour le clic sur l'image du shotgun
 shotgunImg.addEventListener("click", function() {

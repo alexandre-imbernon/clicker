@@ -10,16 +10,7 @@ p {
   color: white;
   
 }
-#menu2 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start; /* Aligner les éléments en haut */
-  justify-content: end;
-  width: 50%;
-}
+
 #menu {
   position: absolute;
   top: 0;
@@ -34,9 +25,20 @@ p {
 }
 
 #menu img {
-  width: 35%; /* Pour que chaque image occupe 35% de la largeur du conteneur */
+  width: 100%; /* Pour que chaque image occupe 35% de la largeur du conteneur */
   margin-bottom: 10px;
   margin: 3px;
+}
+
+#menu2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start; /* Aligner les éléments en haut */
+  justify-content: end;
+  width: 50%;
 }
 
 #monsters {
@@ -49,11 +51,7 @@ p {
 
 #monsters img:hover {
   transform: scale(1.10);
-  color: green; /* Change la couleur du curseur en vert */
 }
-
-
-
 
 #gamename {
   position: absolute;
@@ -78,43 +76,7 @@ p {
   
 }
 
-/* Style de l'info-bulle */
 .tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-/* Style du texte de l'info-bulle */
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 50%;
-  left: 50%;
-  margin-left: -60px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-/* Afficher le texte de l'info-bulle lors du survol */
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
-
-
-#shotgun-container {
-  position: relative;
-  display: inline-block;
-}
-
-#shotgun-cost-tooltip {
   position: absolute;
   top: -40px; /* Ajustez la position verticale pour placer l'info-bulle au-dessus de l'image */
   left: 20%;
@@ -126,10 +88,13 @@ p {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  
 }
 
-#shotgun-container:hover #shotgun-cost-tooltip {
+.item-container {
+  position: relative;
+  display: inline-block;
+}
+
+.item-container:hover .tooltip {
   opacity: 1;
 }
-

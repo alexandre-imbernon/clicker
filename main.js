@@ -1,4 +1,3 @@
-// Variables globales
 var score = 0;
 var shotguns = 0;
 var shotgunCost = 15;
@@ -15,6 +14,9 @@ var shotgunImg = document.getElementById("shotgun-img");
 var machinegunImg = document.getElementById("machinegun-img");
 var clickSoundGun = document.getElementById("click-sound-gun");
 var clickSoundShotGun = document.getElementById("click-sound-shotgun");
+var rubyActive = false;
+var rubyCost = 100; // Définir le coût du ruby
+var rubyDuration = 15000; // Durée de l'effet du ruby en millisecondes
 
 
 function buyshotgun() {
@@ -25,16 +27,12 @@ function buyshotgun() {
         shopSound.currentTime = 0;
         shopSound.play();
 
-        // Update display
         updateDisplay();
         
-        // Update tooltip content
         document.getElementById("shotgun-cost-tooltip").innerHTML = shotgunCost;
         
-        // Update display
         updateDisplay();
         
-        // Assign description with current shotgun cost to title attribute
         shotgunImg.title = "Remington M1100-P (" + shotgunCost + "): Each shot deals 3 damage";
     }
 }
@@ -47,17 +45,24 @@ function buymachinegun() {
         shopSound.currentTime = 0;
         shopSound.play();
 
-        // Update display
         updateDisplay();
 
-        // Update tooltip content
         document.getElementById("machinegun-cost-tooltip").innerHTML = machinegunCost;
 
-        // Update display
         updateDisplay();
         
-        // Assign description with current shotgun cost to title attribute
         machinegunImg.title = "MAC11 Submachine Gun (" + machinegunCost + "): Each shot deals 3 damage";
+    }
+}
+
+function buyruby() {
+    if (score >= rubyCost) {
+        score -= rubyCost;
+        rubyActive = true;
+        setTimeout(function() {
+            rubyActive = false;
+        }, rubyDuration);
+        updateDisplay();
     }
 }
 
@@ -96,28 +101,27 @@ function showBloodEffect(event) {
 
 
 document.getElementById("monster1").addEventListener("click", function(event) {
-    if (shotguns) {
-        score += 2;
-        clickSoundShotGun.currentTime = 0;
-        clickSoundGun.play();
-    } else {
+    var damage = shotguns ? 2 : 1;
+    if (rubyActive) {
+        damage *= 2; // Doubler les dégâts si le ruby est actif
+    }
+    score += damage;
+    showBloodEffect(event); 
     clickSoundGun.currentTime = 0;
     clickSoundGun.play();
-    }
-    showBloodEffect(event); 
 });
 
 document.getElementById("monster2").addEventListener("click", function(event) {
-    if (shotguns) {
-        score += 2;
-        clickSoundShotGun.currentTime = 0;
-        clickSoundGun.play();
-    } else {
+    var damage = shotguns ? 2 : 1;
+    if (rubyActive) {
+        damage *= 2; // Doubler les dégâts si le ruby est actif
+    }
+    score += damage;
+    showBloodEffect(event); 
     clickSoundGun.currentTime = 0;
     clickSoundGun.play();
-    }
-    showBloodEffect(event); 
 });
 
 machinegunImg.addEventListener("click", buymachinegun);
 shotgunImg.addEventListener("click", buyshotgun);
+document.getElementById("ruby-img").addEventListener("click", buyruby); // Assurez-vous d'avoir un élément avec l'ID "ruby-img"

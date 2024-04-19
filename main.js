@@ -22,6 +22,8 @@ function buyshotgun() {
         score -= shotgunCost;
         shotguns++;  
         shotgunCost = Math.round(shotgunCost * 1.5);
+        shopSound.currentTime = 0;
+        shopSound.play();
 
         // Update display
         updateDisplay();
@@ -42,6 +44,8 @@ function buymachinegun() {
         score -= machinegunCost;
         machineguns++;
         machinegunCost = Math.round(machinegunCost * 1.5);
+        shopSound.currentTime = 0;
+        shopSound.play();
 
         // Update display
         updateDisplay();
@@ -94,24 +98,25 @@ function showBloodEffect(event) {
 document.getElementById("monster1").addEventListener("click", function(event) {
     if (shotguns) {
         score += 2;
+        clickSoundShotGun.currentTime = 0;
+        clickSoundGun.play();
+    } else {
+    clickSoundGun.currentTime = 0;
+    clickSoundGun.play();
     }
     showBloodEffect(event); 
-    clickSoundGun.play();
 });
 
 document.getElementById("monster2").addEventListener("click", function(event) {
     if (shotguns) {
         score += 2;
-
+        clickSoundShotGun.currentTime = 0;
+        clickSoundGun.play();
+    } else {
+    clickSoundGun.currentTime = 0;
+    clickSoundGun.play();
     }
     showBloodEffect(event); 
-    clickSoundGun.play();
-});
-
-shotgunImg.addEventListener("click", function() {
-    // Play shop sound
-    shopSound.currentTime = 0;
-    shopSound.play();
 });
 
 machinegunImg.addEventListener("click", buymachinegun);

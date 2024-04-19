@@ -13,6 +13,9 @@ var bloodImages = [
 var shopSound = document.getElementById("shop-sound");
 var shotgunImg = document.getElementById("shotgun-img");
 var machinegunImg = document.getElementById("machinegun-img");
+var clickSoundGun = document.getElementById("click-sound-gun");
+var clickSoundShotGun = document.getElementById("click-sound-shotgun");
+
 
 function buyshotgun() {
     if (score >= shotgunCost) {
@@ -93,13 +96,16 @@ document.getElementById("monster1").addEventListener("click", function(event) {
         score += 2;
     }
     showBloodEffect(event); 
+    clickSoundGun.play();
 });
 
 document.getElementById("monster2").addEventListener("click", function(event) {
     if (shotguns) {
         score += 2;
+
     }
     showBloodEffect(event); 
+    clickSoundGun.play();
 });
 
 shotgunImg.addEventListener("click", function() {

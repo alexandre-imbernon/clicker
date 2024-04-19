@@ -14,7 +14,7 @@ body {
  html {
     cursor: url('image/kirby-removebg-preview.png'), auto;
  }
- 
+
 button {
     font-family: "Luckiest Guy", cursive;
   font-weight: 300;
@@ -192,6 +192,21 @@ body,p {
     left: 70%;
     transform: translate(-50%, -50%);
     width: 8%;
+}
+
+.decor {
+    position: fixed;
+    top: 69%;
+    left: 33%;
+    transform: translate(-50%, -50%);
+}
+
+
+.chomp {
+    position: fixed;
+    top: 85%;
+    left: 30%;
+    transform: translate(-50%, -50%);
 }
 
 

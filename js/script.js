@@ -340,7 +340,6 @@ function fullScreen() {
       }
     }
   }
-
 // Écoutez les événements de changement d'état du plein écran
 document.addEventListener('fullscreenchange', updateFullscreenButton);
 

@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url('images/mine.svg');
+    background-image: url('/images/mine.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -250,33 +250,33 @@ span:hover{
 
 /* Appliquer une image personnalisée comme curseur de la souris */
 body, .update {
-    cursor: url('images/mouse.png') 10 10, auto;
+    cursor: url('/images/mouse.png') 10 10, auto;
 }
 
 /* Appliquer une image personnalisée comme curseur de la souris pour la pioche */
 #button1 {
-    cursor: url('images/pioche.png') 10 10, auto;
+    cursor: url('/images/pioche.png') 10 10, auto;
 }
 
 /* Appliquer une image personnalisée comme curseur de la souris pour lvl up */
 #button2 {
-    cursor: url('images/lvlup.png') 10 10, auto;
+    cursor: url('/images/lvlup.png') 10 10, auto;
 }
 /* Appliquer une image personnalisée comme curseur de la souris pour le cafe */
 #button3 {
-    cursor: url('images/cuillere.png') 10 10, auto;
+    cursor: url('/images/cuillere.png') 10 10, auto;
 }
 
 /* Appliquer une image personnalisée comme curseur de la souris pour la canette */
 #button4 {
-    cursor: url('images/take.png') 10 10, auto;
+    cursor: url('/images/take.png') 10 10, auto;
 }
 
 /* Appliquer une image personnalisée comme curseur de la souris pour la dynamite */
 #button5 {
-    cursor: url('images/briquet.png') 10 10, auto;
+    cursor: url('/images/briquet.png') 10 10, auto;
 }
 /* Appliquer une image personnalisée comme curseur de la souris pour le reset */
 #button6 {
-    cursor: url('images/delete.png') 10 10, auto;
+    cursor: url('/images/delete.png') 10 10, auto;
 }
